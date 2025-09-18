@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload and Text Input</title>
+</head>
+<body>
+<h2>File Upload Form</h2>
+<form action="process.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="fileToUpload" required>
+    <input type="submit" value="Upload File">
+</form>
+
+<hr>
+
+<h2>Text Input Form</h2>
+<form action="text.php" method="post">
+    <textarea name="textData" rows="4" cols="50" required></textarea><br>
+    <input type="submit" value="Save to Log">
+</form>
+
+<hr>
+
+<a href="list.php">View Uploaded Files</a> |
+<a href="text.php">View Log File</a>
+</body>
+</html>
