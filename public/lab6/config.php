@@ -1,24 +1,17 @@
 <?php
 session_start();
 
-$host = '127.0.0.1';
-$dbname = 'users_db';
-$user = 'root';
-$passwords = ['', 'root', 'password', '123456'];
+// Для MAMP
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', 'root');  // MAMP зазвичай використовує 'root'
+define('DB_NAME', 'users_db');
 
-foreach ($passwords as $password) {
-    try {
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Успішне підключення з паролем: '" . $password . "'";
-        // Якщо підключення вдалося, виходимо з циклу
-        break;
-    } catch (PDOException $e) {
-        // Якщо це останній пароль, виводимо повідомлення про помилку
-        if ($password === end($passwords)) {
-            die("Не вдалося підключитися до бази даних. Остання помилка: " . $e->getMessage() .
-                " Спробуйте скинути пароль root для MySQL.");
-        }
-    }
+try {
+    $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USER, DB_PASS);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "✅ Успіх з MAMP налаштуваннями!";
+} catch(PDOException $e) {
+    echo "❌ Помилка: " . $e->getMessage();
 }
 ?>
