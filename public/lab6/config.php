@@ -1,17 +1,16 @@
 <?php
 session_start();
 
-// Для MAMP
-define('DB_HOST', '3306');
-define('DB_USER', 'root');
-define('DB_PASS', 'root');  // MAMP зазвичай використовує 'root'
-define('DB_NAME', 'users_db');
+define('DB_HOST', '127.0.0.1');
+define('DB_USER', 'started-user');
+define('DB_PASS', 'started-password');
+define('DB_NAME', 'started');
 
 try {
     $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USER, DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "✅ Успіх з MAMP налаштуваннями!";
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch(PDOException $e) {
-    echo "❌ Помилка: " . $e->getMessage();
+    die("Помилка підключення до бази даних: " . $e->getMessage());
 }
 ?>
