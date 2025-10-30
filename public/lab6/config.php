@@ -2,8 +2,8 @@
 
 session_start();
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
+define('DB_HOST', 'http://localhost:6334');
+define('DB_USER', 'testuser');
 define('DB_PASS', '');
 define('DB_NAME', 'users_db');
 
