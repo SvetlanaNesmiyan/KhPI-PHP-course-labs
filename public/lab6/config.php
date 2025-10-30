@@ -2,7 +2,7 @@
 session_start();
 
 // Для MAMP
-define('DB_HOST', 'localhost');
+define('DB_HOST', '3306');
 define('DB_USER', 'root');
 define('DB_PASS', 'root');  // MAMP зазвичай використовує 'root'
 define('DB_NAME', 'users_db');
