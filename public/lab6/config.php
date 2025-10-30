@@ -2,9 +2,9 @@
 
 session_start();
 
-define('DB_HOST', 'http://localhost:6334');
+define('DB_HOST', 'localhost');
 define('DB_USER', 'testuser');
-define('DB_PASS', '');
+define('DB_PASS', 'password123');
 define('DB_NAME', 'users_db');
 
 try {
