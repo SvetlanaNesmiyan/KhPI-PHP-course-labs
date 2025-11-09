@@ -18,7 +18,7 @@ function generateReport() {
 }
 
 $cacheFile = __DIR__ . '/cache/report.html';
-$cacheTime = 10 * 60; // 10 хвилин
+$cacheTime = 10 * 60;
 
 if (!file_exists(dirname($cacheFile))) {
     mkdir(dirname($cacheFile), 0755, true);

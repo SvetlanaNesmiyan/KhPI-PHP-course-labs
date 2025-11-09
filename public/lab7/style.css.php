@@ -8,7 +8,7 @@ body { font-family: Arial, sans-serif; margin: 20px; }
 ";
 
 header('Content-Type: text/css');
-header('Cache-Control: public, max-age=86400'); // Кешування на 1 день
+header('Cache-Control: public, max-age=86400');
 header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 86400) . ' GMT');
 header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
 
